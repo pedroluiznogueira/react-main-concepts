@@ -6,44 +6,33 @@ class Login extends React.Component<{}, any> {
 
   constructor(props: any) {
     super(props);
-    this.state = { isToggledOn: true };
+    this.state = {value: ''};
+    console.log(this.state.value);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e: any) {
-    e.preventDefault();
+  handleChange(event: any) {
+    console.log(event.target)
+    this.setState({value: event.target.value});
   }
 
-  handleClick() {
-    this.setState((state: any) => ({ 
-      isToggledOn: !state.isToggledOn
-    }))
+  handleSubmit(event: any) {
+    alert('Um nome foi enviado: ' + this.state.value);
+    event.preventDefault();
   }
 
     render() {
       return (
-        <><Form className="form-content" onSubmit={this.handleSubmit}> 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-          <Button variant="primary" type="submit" onClick={this.handleClick}>
-            {this.state.isToggledOn ? 'ON' : 'OFF'}
-          </Button>
-        </Form></>
-    );
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Nome:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Enviar" />
+        </form>
+      );
     }
 }
 
