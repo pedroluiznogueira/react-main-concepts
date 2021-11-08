@@ -6,34 +6,34 @@ class Login extends React.Component<{}, any> {
 
   constructor(props: any) {
     super(props);
-    this.state = {value: ''};
-    console.log(this.state.value);
+    this.state = {
+      value: 'Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.'
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event: any) {
-    console.log(event.target)
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event: any) {
-    alert('Um nome foi enviado: ' + this.state.value);
+    alert('Uma dissertação foi enviada: ' + this.state.value);
     event.preventDefault();
   }
 
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Nome:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Enviar" />
-        </form>
-      );
-    }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Dissertação:
+          <textarea value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Enviar" />
+      </form>
+    );
+  }
 }
 
 ReactDOM.render(
