@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
+let numbers: number[] = [1, 2, 3, 4, 5];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App numbers={numbers}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

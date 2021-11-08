@@ -4,13 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
 import LoginControl from './components/LoginControl';
 import Greeting from './components/Greeting';
-import Practice from './components/Clock';
 import Clock from './components/Clock';
 
-function App() {
+function App(props: any) {
+
+  const numbers = props.numbers;
+  const listItems = numbers.map((number: any) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
 
   return (
     <div className="form-container">
+      <ul>{listItems}</ul>
       <Login />
       <LoginControl />
     </div>
@@ -18,3 +25,5 @@ function App() {
 }
 
 export default App;
+
+
