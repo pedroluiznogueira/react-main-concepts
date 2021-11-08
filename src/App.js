@@ -10,9 +10,6 @@ function App() {
   return (
     <div className="form-container">
       <Login />
-      <Clock />
-      <Clock />
-      <Clock />
     </div>
   );
 }
