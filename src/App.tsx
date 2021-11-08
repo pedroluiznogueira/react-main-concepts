@@ -5,11 +5,15 @@ import Login from './components/Login';
 import Practice from './components/Practice';
 
 function App() {
-  
+
+  let element = {
+    "age": "10"
+  }
+
   return (
     <div className="form-container">
       <Login />
-      <Practice name="pedro"/>
+      <Practice element={element} />
     </div>
   );
 }
