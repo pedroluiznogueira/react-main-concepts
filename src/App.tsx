@@ -6,6 +6,7 @@ import LoginControl from './components/LoginControl';
 import Greeting from './components/Greeting';
 import Clock from './components/Clock';
 import ListItem from './components/ListItem';
+import Blog from './components/Blog';
 
 function App(props: any) {
 
