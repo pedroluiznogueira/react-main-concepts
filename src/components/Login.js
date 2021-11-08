@@ -3,12 +3,13 @@ import { Button, Form } from 'react-bootstrap';
 
 function Login() {
 
-  function onClickButton() {
+  function handleSubmit(e) {
+    e.preventDefault();
     console.log("It was clicked");
   }
 
     return (
-        <><Form className="form-content">
+        <><Form className="form-content" onSubmit={handleSubmit}> 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -24,7 +25,7 @@ function Login() {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" onClick={onClickButton}>
+        <Button variant="primary" type="submit">
           Submit
         </Button>
     </Form></>
