@@ -7,6 +7,17 @@ class Clock extends React.Component {
     this.state = {date: new Date()};
   }
 
+  // when component is rendered to DOM
+  componentDidMount() {
+    this.timerID = serInterval(
+      () => this.tick(), 
+      1000
+    );
+  }
+
+  // when we want to unmount a temporizer
+  componentWillUnmount() {}
+
   render() {
     return (
       <div>
