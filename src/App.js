@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
-import Practice from './components/Practice';
-import Clock from './components/Practice';
+import Practice from './components/Clock';
+import Clock from './components/Clock';
 
 function App() {
 
