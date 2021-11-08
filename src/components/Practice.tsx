@@ -1,10 +1,22 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-function Practice(props: any) {
+class Clock extends React.Component {
+    
+    constructor(props: any) {
+        super(props);
+        this.state = {date: new Date()};
+    }
 
-    return(
-        <h1>Hello {props.element.age}</h1>
-    );
+
+    render() {
+      return (
+        <div>
+          <h1>Hello, world!</h1>
+          {/* <h2>It is {this.state.date.toLocaleTimeString()}.</h2> */}
+        </div>
+      );
+    }
 }
 
-export default Practice;
+export default Clock;
