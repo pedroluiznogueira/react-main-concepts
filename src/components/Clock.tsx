@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Clock extends React.Component {
+class Clock extends React.Component<{}, any> {
   
-  constructor(props) {
+  timerID?: any;
+
+  constructor(props: any) {
     super(props);
     this.state = {date: new Date()};
   }

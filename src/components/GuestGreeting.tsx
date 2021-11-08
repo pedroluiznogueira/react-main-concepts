@@ -1,4 +1,4 @@
-function GuestGreeting(props) {
+function GuestGreeting(props: any) {
     return <h1>Please sign up.</h1>;
   }
 

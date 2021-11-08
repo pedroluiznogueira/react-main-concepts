@@ -2,21 +2,21 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 
-class Login extends React.Component {
+class Login extends React.Component<{}, any> {
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = { isToggledOn: true };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit(e: any) {
     e.preventDefault();
   }
 
   handleClick() {
-    this.setState(state => ({ 
+    this.setState((state: any) => ({ 
       isToggledOn: !state.isToggledOn
     }))
   }
