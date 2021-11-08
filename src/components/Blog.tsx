@@ -16,9 +16,22 @@ function Blog(props: any) {
     );
     return (
       <div>
-        {sidebar}
+        {
+                props.posts.map((post: any) =>
+                <div key={post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
+                </div>
+            )
+        }
         <hr />
-        {content}
+        {
+                props.posts.map((post: any) =>
+                <li key={post.id}>
+                    {post.id}
+                </li>
+                )                
+        }
       </div>
     );
 }
