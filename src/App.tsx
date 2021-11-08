@@ -9,9 +9,9 @@ import Clock from './components/Clock';
 function App(props: any) {
 
   const numbers = props.numbers;
-  const listItems = numbers.map((number: any) =>
-    <li key={number.toString()}>
-      {number}
+  const listItems = numbers.map((number: any, index: any) =>
+    <li key={index}>
+      {index}
     </li>
   );
 
