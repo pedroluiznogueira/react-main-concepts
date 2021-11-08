@@ -6,9 +6,7 @@ class Login extends React.Component<{}, any> {
 
   constructor(props: any) {
     super(props);
-    this.state = {
-      value: 'Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.'
-    };
+    this.state = {value: 'coco'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +17,7 @@ class Login extends React.Component<{}, any> {
   }
 
   handleSubmit(event: any) {
-    alert('Uma dissertação foi enviada: ' + this.state.value);
+    alert('Seu sabor favorito é: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -27,8 +25,13 @@ class Login extends React.Component<{}, any> {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Dissertação:
-          <textarea value={this.state.value} onChange={this.handleChange} />
+          Escolha seu sabor favorito:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="laranja">Laranja</option>
+            <option value="limao">Limão</option>
+            <option value="coco">Coco</option>
+            <option value="manga">Manga</option>
+          </select>
         </label>
         <input type="submit" value="Enviar" />
       </form>
